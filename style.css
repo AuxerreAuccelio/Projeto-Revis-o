@@ -39,7 +39,8 @@ footer {
 }
 
 h1 {
-    padding: 50px;
+    padding: 20px;
+    background-color: rgb(172, 22, 22);
 }
 
 nav {
