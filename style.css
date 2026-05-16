@@ -49,8 +49,6 @@ nav {
     
 }
 
-
-
 nav aside {
     border: 2px solid blue;
     flex-grow: 4;
@@ -77,20 +75,29 @@ nav #textos p {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-bottom: 50px;
-        
-    
+    padding-bottom: 50px;      
     flex-grow: 1;
-    width: 90%;
+    width: 100%;
 
     background-color: blueviolet;
-    }
+}
 
-nav #textos #botoes_texto {
-    
+nav #textos #botoes_texto {   
     display: flex;
     justify-content: space-between;
+    flex-grow: 1;
     
 }
 
+#botoes {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+#textos #voltar, #textos #avancar {
+    color: crimson;
+    width: 30%;
+    
+    
+}
