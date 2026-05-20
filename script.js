@@ -34,6 +34,16 @@ async function metadados(url){
 function refresh_screen(pokemon_tratado){
     const img = document.querySelector('section img');
     img.src = pokemon_tratado.sprites.other['official-artwork'].front_shiny;
+
+    const h2 = document.querySelector('h2');
+    h2.innerText = pokemon_tratado.name;
+    
+
+    let p = document.querySelector('#habilidade');
+    p.innerText = pokemon_tratado.abilities[0].ability.name;
+
+    let p = document.querySelector('#movimento');
+    p.innerText = pokemon_tratado.abilities[0].move.name;
 }
 
 
