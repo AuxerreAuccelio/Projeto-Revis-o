@@ -39,11 +39,13 @@ function refresh_screen(pokemon_tratado){
     h2.innerText = pokemon_tratado.name;
     
 
-    let p = document.querySelector('#habilidade');
-    p.innerText = pokemon_tratado.abilities[0].ability.name;
+    const elemento_habilidade = document.querySelector('#habilidade');
+    elemento_habilidade.innerText = pokemon_tratado.abilities[0].ability.name;
 
-    let p = document.querySelector('#movimento');
-    p.innerText = pokemon_tratado.abilities[0].move.name;
+    const elemento_movimento = document.querySelector('#movimento');
+    elemento_movimento.innerText = pokemon_tratado.moves[0].move.name;
+
+    // console.log(pokemon_tratado.moves[0].move.name)
 }
 
 
