@@ -45,7 +45,14 @@ function refresh_screen(pokemon_tratado){
     const elemento_movimento = document.querySelector('#movimento');
     elemento_movimento.innerText = pokemon_tratado.moves[0].move.name;
 
-    // console.log(pokemon_tratado.moves[0].move.name)
+    const elemento_tipo = document.querySelector('#tipo'); 
+    // console.log(elemento_tipo)
+    elemento_tipo.innerText = pokemon_tratado.types[0].type.name;
+
+    const elemento_peso = document.querySelector('#peso');
+    elemento_peso.innerText = pokemon_tratado.weight
+
+    //  console.log(pokemon_tratado.types[0].type.name);
 }
 
 
