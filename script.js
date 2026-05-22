@@ -26,7 +26,7 @@ async function metadados(url){
                                      // a trasmissão do status 200 ok ou 404 not found
     // console.log(url2);
     const url_json = await url2.json();   // a url objeto mostra os metadados de fato da API
-    console.log(url_json); 
+    //console.log(url_json); 
     refresh_screen(url_json);
 }
 
@@ -55,82 +55,15 @@ function refresh_screen(pokemon_tratado){
     elemento_peso.innerHTML = `<span style="color: blue;">PESO:</span> <span style="color: yellow;">${pokemon_tratado.weight}</span>`;
     elemento_peso.style.display = "inline-block";
    
+    monitoramento(pokemon_tratado.id);
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const url = `https://picsum.photos/v2/list`; 
-
-// async function data(){
-//     const dados = await fetch(url);
-//     // console.log(data);
-//     const metadados = await dados.json();
-
-//     meta(metadados);
-// }
-
-// data();
-
-// function meta(metadados){
-//       //console.table(metadados);
-//       metadados.forEach(
-//         foto => {
-//             //Crie a tag semãntica
-//             const response = document.createElement('div');
-            
-//             //Preencha a tag semântica com o conteúdo
-//             response.innerHTML = `
-//                 <img src="${foto.download_url}" width="300">
-//                 <h4>Autor: ${foto.author}</h4>
-//                 <h3>ID: ${foto.id}</h3>
-//             `
+function monitoramento(pokemon_tratado){
+    let elemento_voltar = document.querySelector('#voltar');
+    elemento_voltar.addEventListener('click', (e) => {        
+        console.log(Number(pokemon_tratado - 1) );        
         
-//             //Pendure a tag semântica com o conteúdo
-//             document.querySelector('main').appendChild(response);
-//         }
-        
-//       );
-// }
-
+    } );
+}
