@@ -11,6 +11,7 @@ body {
     width: 100dvw;
     height: 100dvh;
     background-color: black;
+    background: linear-gradient(to right, rgb(43, 43, 150), rgb(0, 0, 0));
     color: white;
     font-weight: bold;
 
@@ -19,33 +20,47 @@ body {
     text-align: center;
     justify-content: center;
     text-align: center;
+
+    /* background-image: url(./Ash.jpeg); */ /* coloca a imagem no fundo da tela (vários quadrados pequenos) */
+    /* background-size: cover; */ /* garante que a imagem cubra a tela inteira */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */ /* impede que a imagem se repita constantemente */
+    /* background-attachment: fixed; */  /* fixa a tela ao rolar a barra de rolagem */
+    
 }
 
 header {
-    /* border: 2px solid green; */
+    /* border: 2px solid rgb(22, 56, 206); */
+    background: linear-gradient(to right, red, blue);
+    background-color: crimson;
     display: flex;
     justify-content: space-between;
     padding: 20px 10px 10px 5px;
     font-size: 22px;
     margin-left: 20px;
     margin-right: 20px;
+    border-radius: 10px;
     
 }
 
 input {
+    /* border: 2px solid rgb(183, 220, 20); */
     min-width: 35ch;
 }
 
 #top button {
+    /* border: 2px solid crimson; */
     background-color: green;
     color: white;
     font-size: 15px;
-    padding: 20px 10px 5px 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 15px;
 }
 
 #top input {
     font-size: 15px;
     padding: 10px;
+    border-radius: 15px;
 }
 
 footer {
@@ -62,7 +77,7 @@ h1 {
     padding: 5px;    
     display: flex;
     flex-direction: column;
-    color: crimson;
+    color: rgb(244, 248, 12);
 }
 
 h2 {
@@ -71,6 +86,7 @@ h2 {
     flex-direction: column;
     margin-bottom: 5px;
     color: rgb(247, 242, 0);
+    font-size: 40px;
 }
 
 section {
@@ -106,7 +122,7 @@ section #textos {
 
 section #textos p {
     padding-top: 30px;
-    font-size: 18px;
+    font-size: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,6 +146,7 @@ section #textos #botoes {
     display: flex;
     justify-content: space-between;
     height: 20px;
+    
 }
 
 #botoes #voltar {
@@ -138,6 +155,7 @@ section #textos #botoes {
     width: 30%;
     font-size: 20px;
     font-weight: bold;
+    border-radius: 70px;
 }
 
 #botoes #avancar {
@@ -146,4 +164,5 @@ section #textos #botoes {
     width: 30%;
     font-size: 20px;
     font-weight: bold;
+    border-radius: 70px;
 }

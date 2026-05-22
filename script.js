@@ -36,23 +36,25 @@ function refresh_screen(pokemon_tratado){
     img.src = pokemon_tratado.sprites.other['official-artwork'].front_shiny;
 
     const h2 = document.querySelector('h2');
-    h2.innerText = pokemon_tratado.name;
+    h2.innerText = pokemon_tratado.name.toUpperCase();
     
 
     const elemento_habilidade = document.querySelector('#habilidade');
-    elemento_habilidade.innerText = pokemon_tratado.abilities[0].ability.name;
+    elemento_habilidade.innerHTML = `<span style="color: blue;"> HABILIDADE:</span> <span style="color: yellow;">${pokemon_tratado.abilities[0].ability.name.toUpperCase()}</span>`;
+    elemento_habilidade.style.display = "inline-block";
 
     const elemento_movimento = document.querySelector('#movimento');
-    elemento_movimento.innerText = pokemon_tratado.moves[0].move.name;
+    elemento_movimento.innerHTML = `<span style="color: blue;">MOVIMENTOS:</span> ${pokemon_tratado.moves[0].move.name.toUpperCase()}`;
+    elemento_movimento.style.display = "inline-block";
 
-    const elemento_tipo = document.querySelector('#tipo'); 
-    // console.log(elemento_tipo)
-    elemento_tipo.innerText = pokemon_tratado.types[0].type.name;
+    const elemento_tipo = document.querySelector('#tipo');    
+    elemento_tipo.innerHTML = `<span style="color: blue;">TIPO:</span> ${pokemon_tratado.types[0].type.name.toUpperCase()}`;
+    elemento_tipo.style.display = "inline-block";
 
     const elemento_peso = document.querySelector('#peso');
-    elemento_peso.innerText = pokemon_tratado.weight
-
-    //  console.log(pokemon_tratado.types[0].type.name);
+    elemento_peso.innerHTML = `<span style="color: blue;">PESO:</span> <span style="color: yellow;">${pokemon_tratado.weight}</span>`;
+    elemento_peso.style.display = "inline-block";
+   
 }
 
 
