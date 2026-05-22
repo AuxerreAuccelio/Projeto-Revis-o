@@ -62,8 +62,49 @@ function refresh_screen(pokemon_tratado){
 
 function monitoramento(pokemon_tratado){
     let elemento_voltar = document.querySelector('#voltar');
-    elemento_voltar.addEventListener('click', (e) => {        
-        console.log(Number(pokemon_tratado - 1) );        
+
+    const novo_botao = elemento_voltar.cloneNode(true);
+    elemento_voltar.parentNode.replaceChild(novo_botao, elemento_voltar);
+
+    novo_botao.addEventListener('click', () => {        
+        let id_atual = (Number(pokemon_tratado - 1) );
+
+        try{
+            if(id_atual > 0 && id_atual < 1026){
+                console.log(id_atual);
+                data(id_atual);
+            }    
+        }
+        catch(erro) {
+            
+            // console.error("Erro na busca: ", erro);            
+            alert('Pokémon não encontrado! Por favor verifique o nome ou o ID !');
+            
+        }
+         finally{
+            if(id_atual <= 0){
+            console.log(id_atual);
+            id_atual = 1025;
+            data(id_atual);
+            }
+         }                   
         
     } );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// Faltas 
+
+// Logica de Programação 7 - max 25
+// Redes 10 - max 25
+// SO 5 -  max 25
