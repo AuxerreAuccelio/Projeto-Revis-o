@@ -1,3 +1,7 @@
+// const url = `https://pokeapi.co/api/v2/pokemon/`; //url retirada do site
+//const url = `https://pokeapi.co/api/v2/pokemon/4`;
+
+
 const form = document.querySelector('form');
 
 let escutador = form.addEventListener('submit', function(e){
@@ -33,7 +37,7 @@ function refresh_screen(pokemon_tratado, id_pokemon){
     img.src = pokemon_tratado.sprites.other['official-artwork'].front_shiny;
 
     const h2 = document.querySelector('h2');
-    h2.innerText = `${id_pokemon} - ${pokemon_tratado.name.toUpperCase()}`;
+    h2.innerText = `${pokemon_tratado.id} - ${pokemon_tratado.name.toUpperCase()}`;
     
 
     const elemento_habilidade = document.querySelector('#habilidade');
@@ -65,23 +69,14 @@ function monitoramento(pokemon_tratado){
 
     novo_botao.addEventListener('click', () => {        
         let id_atual = (Number(pokemon_tratado - 1) );
-
-        try{
+      
             if(id_atual > 0 && id_atual < 1026){
                 data(id_atual);
-            }    
-        }
-        catch(erro) {
-            
-            console.error("Erro na busca: ", erro);
-            alert('Pokémon não encontrado! Por favor verifique o nome ou o ID !');
-            
-        }
-         finally{
-            if(id_atual <= 0){
-            id_atual = 1025;
-            data(id_atual);
-            }
+            }   else {
+                    if(id_atual <= 0){
+                    id_atual = 1025;
+                    data(id_atual);
+                }
          }                   
         
     } );
@@ -107,34 +102,6 @@ async function metadados(url, id_pokemon) {
         alert('Pokémon não encontrado! Verifique o nome ou ID.');
     }
 }
-
-// 2. Simplifique a lógica do monitoramento (Botão Voltar)
-function monitoramento(id_recebido) {
-    const elemento_voltar = document.querySelector('#voltar');
-    const novo_botao = elemento_voltar.cloneNode(true);
-    elemento_voltar.parentNode.replaceChild(novo_botao, elemento_voltar);
-
-    novo_botao.addEventListener('click', () => {        
-        let id_atual = id_recebido - 1;
-
-        // Lógica de Loop: se for menor que 1, volta para o último Pokémon conhecido
-        if (id_atual < 1) {
-            id_atual = 1025;
-        }
-        
-        data(id_atual);
-    });
-}
-
-
-
-*/
-
-
-
-
-
-
 
 
 /*

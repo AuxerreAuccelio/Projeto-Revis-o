@@ -20,7 +20,13 @@ body {
     text-align: center;
     justify-content: center;
     text-align: center;
-   
+
+    /* background-image: url(./Ash.jpeg); */ /* coloca a imagem no fundo da tela (vários quadrados pequenos) */
+    /* background-size: cover; */ /* garante que a imagem cubra a tela inteira */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */ /* impede que a imagem se repita constantemente */
+    /* background-attachment: fixed; */  /* fixa a tela ao rolar a barra de rolagem */
+    
 }
 
 header {
