@@ -48,15 +48,22 @@ function refresh_screen(pokemon_tratado, id_pokemon){
     
 
     const elemento_habilidade = document.querySelector('#habilidade');
-    elemento_habilidade.innerHTML = `<span style="color: blue;"> HABILIDADE:</span> <span style="color: yellow;">${pokemon_tratado.abilities[0].ability.name.toUpperCase()}</span>`;
+    let array_habilidades = pokemon_tratado.abilities.map( (habilidade) => { return habilidade.ability.name.toUpperCase(); } );
+    array_habilidades = array_habilidades.join(' / ');    
+    // console.log(array_habilidades);
+    elemento_habilidade.innerHTML = `<span style="color: blue;"> HABILIDADE:</span> <span style="color: yellow;">${array_habilidades}</span>`;
     elemento_habilidade.style.display = "inline-block";
 
     const elemento_movimento = document.querySelector('#movimento');
-    elemento_movimento.innerHTML = `<span style="color: blue;">MOVIMENTOS:</span> ${pokemon_tratado.moves[0].move.name.toUpperCase()}`;
+    let array_movimentos = pokemon_tratado.moves.slice(0, 3).map( (movimento) => { return movimento.move.name.toUpperCase(); } );
+    array_movimentos = array_movimentos.join(' / ');
+    elemento_movimento.innerHTML = `<span style="color: blue;">MOVIMENTOS:</span> <span style="color: yellow;">${array_movimentos}</span>`;
     elemento_movimento.style.display = "inline-block";
 
     const elemento_tipo = document.querySelector('#tipo');    
-    elemento_tipo.innerHTML = `<span style="color: blue;">TIPO:</span> ${pokemon_tratado.types[0].type.name.toUpperCase()}`;
+    let array_tipos = pokemon_tratado.types.map( (tipo) => { return tipo.type.name.toUpperCase() ;} );
+    array_tipos = array_tipos.join(' / ');
+    elemento_tipo.innerHTML = `<span style="color: blue;">TIPO:</span> <span style="color: yellow;">${array_tipos}</span>`;
     elemento_tipo.style.display = "inline-block";
 
     const elemento_peso = document.querySelector('#peso');
@@ -88,6 +95,7 @@ function monitoramento(pokemon_tratado){
         
     } );
 }
+
 
 
 

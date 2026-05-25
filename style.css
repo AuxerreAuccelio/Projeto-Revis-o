@@ -9,7 +9,7 @@
 body {
     /* border: 2px solid crimson; */
     width: 100dvw;
-    height: 100dvh;
+    min-height: 100dvh;
     background-color: black;
     background: linear-gradient(to right, rgb(43, 43, 150), rgb(0, 0, 0));
     color: white;
@@ -21,12 +21,6 @@ body {
     justify-content: center;
     text-align: center;
 
-    /* background-image: url(./Ash.jpeg); */ /* coloca a imagem no fundo da tela (vários quadrados pequenos) */
-    /* background-size: cover; */ /* garante que a imagem cubra a tela inteira */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */ /* impede que a imagem se repita constantemente */
-    /* background-attachment: fixed; */  /* fixa a tela ao rolar a barra de rolagem */
-    
 }
 
 header {
@@ -72,9 +66,11 @@ footer {
     /* border: 2px solid gray; */
     width: 100%;
     height: auto;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 15px;
+
+    padding: 10px;
 }
 
 h1 {
