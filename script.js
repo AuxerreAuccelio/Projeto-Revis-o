@@ -14,7 +14,7 @@ let escutador = form.addEventListener('submit', function(e){
 
 function normalize_text(pokemon){
     let id_pokemon = (pokemon.value.toLowerCase());
-    id_pokemon = id_pokemon.replace(/\s+/g, '').trim();
+    id_pokemon = id_pokemon.replace(/\s+/g, '').trim().replace(/^0+/, '');
     console.log(id_pokemon);
     return id_pokemon;
 }
