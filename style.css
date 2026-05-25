@@ -20,13 +20,7 @@ body {
     text-align: center;
     justify-content: center;
     text-align: center;
-
-    /* background-image: url(./Ash.jpeg); */ /* coloca a imagem no fundo da tela (vários quadrados pequenos) */
-    /* background-size: cover; */ /* garante que a imagem cubra a tela inteira */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */ /* impede que a imagem se repita constantemente */
-    /* background-attachment: fixed; */  /* fixa a tela ao rolar a barra de rolagem */
-    
+   
 }
 
 header {
@@ -46,6 +40,9 @@ header {
 input {
     /* border: 2px solid rgb(183, 220, 20); */
     min-width: 35ch;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 #top button {
@@ -103,7 +100,7 @@ section img {
     flex-grow: 4;    
     padding: 0px 20px;
     width: 20%;
-    height: 80dvh;
+    height: 70dvh;
 
     margin-left: 250px;
 }
@@ -114,7 +111,7 @@ section #textos {
     flex-direction: column;
     flex-grow: 4;
     width: 20%;
-    height: 80dvh;
+    height: 70dvh;
 
     margin-right: 250px;
     
