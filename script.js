@@ -6,11 +6,18 @@ const form = document.querySelector('form');
 
 let escutador = form.addEventListener('submit', function(e){
     e.preventDefault();
-    const pokemon = document.querySelector("input");   //aqui devolve um objeto apontando para o HTML
-    const id_pokemon = (pokemon.value.toLowerCase().trim());   // aqui devolve uma string - pouco tipada então passa como number
+    let pokemon = document.querySelector("input");   //aqui devolve um objeto apontando para o HTML
+    let id_pokemon = normalize_text(pokemon);   // aqui devolve uma string - pouco tipada então passa como number
     clean_validate(pokemon, id_pokemon);
         
 } );
+
+function normalize_text(pokemon){
+    let id_pokemon = (pokemon.value.toLowerCase());
+    id_pokemon = id_pokemon.replace(/\s+/g, '').trim();
+    console.log(id_pokemon);
+    return id_pokemon;
+}
 
 function clean_validate(pokemon, id_pokemon){
     pokemon.value = ""; // limpa a entrada no input
@@ -104,6 +111,13 @@ async function metadados(url, id_pokemon) {
 }
 
 
+*/
+
+
+
+
+
+
 /*
 
 
@@ -122,5 +136,3 @@ async function metadados(url) {
 
 
 */
-
-
