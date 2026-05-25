@@ -67,7 +67,8 @@ function refresh_screen(pokemon_tratado, id_pokemon){
     elemento_tipo.style.display = "inline-block";
 
     const elemento_peso = document.querySelector('#peso');
-    elemento_peso.innerHTML = `<span style="color: blue;">PESO:</span> <span style="color: yellow;">${pokemon_tratado.weight}</span>`;
+    let peso_em_kg = pokemon_tratado.weight / 10;    
+    elemento_peso.innerHTML = `<span style="color: blue;">PESO:</span> <span style="color: yellow;">${peso_em_kg} Kg</span>`;
     elemento_peso.style.display = "inline-block";
    
     monitoramento(pokemon_tratado.id);
