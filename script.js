@@ -32,10 +32,24 @@ async function data(id_pokemon){ /* console.log(`${id_pokemon} aqui noutra funca
 }
 
 async function metadados(url, id_pokemon){
-    const url2 = await fetch(url);   // a url string é transformada em objeto e fala sobre
-                                     // a trasmissão do status 200 ok ou 404 not found
-    const url_json = await url2.json();   // a url objeto mostra os metadados de fato da API
-    refresh_screen(url_json, id_pokemon);
+    try{
+        const url2 = await fetch(url);   // a url string é transformada em objeto e fala sobre
+        if(!url2){
+            throw new Error("Erro na requisição ao servidor!"); // a trasmissão do status 200 ok ou 404 not found
+        }
+        const url_json = await url2.json();   // a url objeto mostra os metadados de fato da API
+        refresh_screen(url_json, id_pokemon);
+
+
+    }catch(erro){
+        let mensagem = document.querySelector('input');
+        mensagem.value = 'Pokemon não encontrado! Por favor verifique a entrada.';
+        setTimeout( function(){
+            mensagem.value = '';
+        }, 
+        3000 );
+    }
+                                     
 }
 
 
@@ -100,10 +114,45 @@ function monitoramento(pokemon_tratado){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 
 
-// 1. Centralize o tratamento de erro onde a rede é consultada
+
 async function metadados(url, id_pokemon) {
     try {
         const resposta = await fetch(url);

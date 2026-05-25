@@ -39,7 +39,7 @@ header {
 
 input {
     /* border: 2px solid rgb(183, 220, 20); */
-    min-width: 35ch;
+    min-width: 55ch;
     text-align: center;
     font-weight: bold;
     font-size: 25px;
