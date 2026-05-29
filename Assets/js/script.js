@@ -109,6 +109,31 @@ function monitoramento(pokemon_tratado){
          }                   
         
     } );
+
+
+
+let elemento_avancar = document.querySelector('#avancar');
+
+    const novo_botao2 = elemento_avancar.cloneNode(true);
+    elemento_avancar.parentNode.replaceChild(novo_botao2, elemento_avancar);
+
+    novo_botao2.addEventListener('click', () => {        
+        let id_atual2 = (Number(pokemon_tratado + 1) );
+      
+            if(id_atual2 > 0 && id_atual2 < 1026){
+                data(id_atual2);
+            }   else {
+                    if(id_atual2 >= 1026){
+                    id_atual2 = 1;
+                    data(id_atual2);
+                }
+         }                   
+        
+    } );
+
+
+
+
 }
 
 
