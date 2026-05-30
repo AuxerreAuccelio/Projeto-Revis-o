@@ -7,7 +7,7 @@ const form = document.querySelector('form');
 let escutador = form.addEventListener('submit', function(e){
     e.preventDefault();
     let pokemon = document.querySelector("input");   //aqui devolve um objeto apontando para o HTML
-    let id_pokemon = normalize_text(pokemon);   // aqui devolve uma string - pouco tipada então passa como number
+    let id_pokemon = normalize_text(pokemon);   // aqui devolve uma string - pouco tipada então passa como number  
     clean_validate(pokemon, id_pokemon);
         
 } );
@@ -15,7 +15,6 @@ let escutador = form.addEventListener('submit', function(e){
 function normalize_text(pokemon){
     let id_pokemon = (pokemon.value.toLowerCase());
     id_pokemon = id_pokemon.replace(/\s+/g, '').trim().replace(/^0+/, '');
-    console.log(id_pokemon);
     return id_pokemon;
 }
 
@@ -34,7 +33,7 @@ async function data(id_pokemon){ /* console.log(`${id_pokemon} aqui noutra funca
 async function metadados(url, id_pokemon){
     try{
         const url2 = await fetch(url);   // a url string é transformada em objeto e fala sobre
-        if(!url2){
+        if(!url2.ok){
             throw new Error("Erro na requisição ao servidor!"); // a trasmissão do status 200 ok ou 404 not found
         }
         const url_json = await url2.json();   // a url objeto mostra os metadados de fato da API
@@ -43,7 +42,12 @@ async function metadados(url, id_pokemon){
 
     }catch(erro){
         let mensagem = document.querySelector('input');
-        mensagem.value = 'Pokemon não encontrado! Por favor verifique a entrada.';
+
+        if(!navigator.onLine){
+            mensagem.value = 'Sem conexão com a internet! Verifique-a por favor';
+        } else {
+            mensagem.value = 'Erro ao buscar o Pokemon! Por favor verifique a entrada.';            
+        }
         setTimeout( function(){
             mensagem.value = '';
         }, 
