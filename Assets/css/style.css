@@ -19,7 +19,6 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    text-align: center;
  }
 
 header {
@@ -28,6 +27,7 @@ header {
     background-color: crimson;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 10px 10px 5px;
     font-size: 22px;
     margin-left: 20px;
@@ -106,6 +106,7 @@ section img {
     height: 70dvh;
 
     margin-left: 250px;
+    object-fit: contain;
 }
 
 section #textos {
@@ -157,6 +158,7 @@ section #textos #botoes {
     font-weight: bold;
     border-radius: 70px;
     cursor: pointer;
+    padding: 5px 10px;
 }
 
 #botoes #avancar {
@@ -167,4 +169,82 @@ section #textos #botoes {
     font-weight: bold;
     border-radius: 70px;
     cursor: pointer;
+    padding: 5px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    /* Ajusta o Header para empilhar o Título e o Formulário */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px;
+    }
+
+    /* Remove o tamanho fixo baseado em caracteres (ch) para caber na tela */
+    input, #top input {
+        min-width: 100%;
+        font-size: 10px;
+    }
+
+    #top {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #top button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* Muda o layout principal de Linha para Coluna */
+    section {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Zera as margens das laterais */
+    section img {
+        margin-left: 0;
+        width: 60%; /* Ajusta a imagem para um tamanho menor e centraliza no celular */
+        height: auto;
+        max-height: 40dvh;
+    }
+
+    section #textos {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    section #textos p {
+        padding-top: 15px;
+        font-size: 18px;
+    }
+
+    /* Aumenta a área dos botões */
+    #botoes {
+        height: 50px;
+        margin-top: 25px;
+    }
+
+    #botoes #voltar, 
+    #botoes #avancar {
+        width: 45%; /* Aumenta os botões para o clique no celular */
+        font-size: 18px;
+    }
 }
